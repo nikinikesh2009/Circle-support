@@ -52,7 +52,7 @@ export default function FaqClient({ faqData }: FaqClientProps) {
         <Input
           type="search"
           placeholder="Search questions..."
-          className="w-full rounded-full bg-card pl-10 pr-4 py-6 text-base"
+          className="w-full rounded-full bg-card pl-10 pr-4 py-6 text-base transition-shadow focus:shadow-lg"
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
         />
@@ -70,7 +70,7 @@ export default function FaqClient({ faqData }: FaqClientProps) {
                 </h3>
                 <Accordion type="single" collapsible className="w-full space-y-2">
                   {category.items.map(item => (
-                    <AccordionItem value={item.question} key={item.question} className="rounded-lg border bg-card px-4 shadow-sm">
+                    <AccordionItem value={item.question} key={item.question} className="rounded-lg border bg-card px-4 shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
                       <AccordionTrigger className="text-left font-medium hover:no-underline">{item.question}</AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">{item.answer}</AccordionContent>
                     </AccordionItem>

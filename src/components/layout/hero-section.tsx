@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="w-full bg-card py-12 md:py-24 lg:py-32">
+    <section className="w-full bg-card py-12 md:py-24 lg:py-32 animate-fade-in-up">
       <div className="container px-4 text-center">
         <div className="space-y-4">
           <h1 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-6xl/none">
