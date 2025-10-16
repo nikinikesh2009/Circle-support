@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${cormorantGaramond.variable} dark`} suppressHydrationWarning>
+    <html lang="en" className={`${spaceGrotesk.variable} ${cormorantGaramond.variable}`} suppressHydrationWarning>
       <head />
       <body className="font-body antialiased">
         {children}
