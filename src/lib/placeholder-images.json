@@ -3,8 +3,8 @@
     {
       "id": "hero-background",
       "description": "Abstract background for the hero section",
-      "imageUrl": "https://picsum.photos/seed/circle-support/1920/400",
-      "imageHint": "abstract pattern"
+      "imageUrl": "https://picsum.photos/seed/night-sky/1920/1080",
+      "imageHint": "starry night"
     }
   ]
 }

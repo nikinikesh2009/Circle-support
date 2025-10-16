@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"PT Sans"', 'sans-serif'],
-        headline: ['"PT Sans"', 'sans-serif'],
+        body: ['var(--font-space-grotesk)', 'sans-serif'],
+        headline: ['var(--font-cormorant-garamond)', 'serif'],
         code: ['monospace'],
       },
       colors: {
@@ -104,6 +104,7 @@ export default {
             opacity: '0',
             transform: 'translateY(20px)',
           },
+
           to: {
             opacity: '1',
             transform: 'translateY(0)',
@@ -112,7 +113,21 @@ export default {
         'pulsar': {
           '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 hsl(var(--primary) / 0.7)' },
           '50%': { transform: 'scale(1.05)', boxShadow: '0 0 20px 10px hsl(var(--primary) / 0)' },
-        }
+        },
+        'shooting-star': {
+          '0%': {
+            transform: 'translateX(150vw) translateY(-50vh) scale(0)',
+            opacity: '1',
+          },
+          '70%': {
+            transform: 'translateX(-50vw) translateY(50vh) scale(1)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translateX(-80vw) translateY(60vh) scale(1)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -120,6 +135,7 @@ export default {
         'fade-in': 'fade-in 0.6s ease-in-out',
         'fade-in-up': 'fade-in-up 0.8s ease-in-out',
         'pulsar': 'pulsar 2s infinite',
+        'shooting-star': 'shooting-star 8s ease-in-out infinite',
       },
     },
   },
