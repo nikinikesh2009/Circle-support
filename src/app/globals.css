@@ -4,32 +4,32 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%; /* #F9FAFB Snow White */
-    --foreground: 222 28% 17%; /* #1E293B Charcoal Gray */
+    --background: 210 20% 98%;
+    --foreground: 222 28% 17%;
 
-    --card: 0 0% 100%; /* white */
+    --card: 0 0% 100%;
     --card-foreground: 222 28% 17%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222 28% 17%;
 
-    --primary: 198 93% 58%; /* Electric Blue */
+    --primary: 198 93% 58%;
     --primary-foreground: 210 20% 98%;
 
-    --secondary: 206 100% 74%; /* Soft Sky Blue */
+    --secondary: 206 100% 74%;
     --secondary-foreground: 222 28% 17%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%; /* #64748B Cool Gray */
+    --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 210 93% 58%;
     --accent-foreground: 210 20% 98%;
 
-    --destructive: 0 84.2% 60.2%; /* #EF4444 Soft Red */
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --warning: 45 93% 58%; /* #FBBF24 Amber */
-    --success: 158 79% 43%; /* #10B981 Emerald */
+    --warning: 45 93% 58%;
+    --success: 158 79% 43%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;

@@ -1,5 +1,4 @@
 'use client';
-import { useEffect, useCallback } from 'react';
 
 declare global {
   interface Window {
@@ -10,44 +9,32 @@ declare global {
 
 export function LanguageSwitcher() {
 
-  const googleTranslateElementInit = useCallback(() => {
-    new window.google.translate.TranslateElement(
-      {
-        pageLanguage: 'en',
-        includedLanguages: 'en,si,ta,zh-CN,hi,ko,tl,id,es,fr,de,ja,ru',
-        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false,
-      },
-      'google_translate_element'
-    );
-  }, []);
-
   const doGTranslate = (lang: string) => {
     if (!lang) return;
-    
-    // Find the Google Translate dropdown
-    const teCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
 
+    const teCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+    
     if (document.getElementById('google_translate_element') == null || !teCombo) {
-      // If it's not ready, retry after a short delay
       setTimeout(() => { doGTranslate(lang); }, 100);
     } else {
       teCombo.value = lang;
-      // Dispatch a change event to trigger the translation
       const event = new Event('change');
       teCombo.dispatchEvent(event);
     }
   };
 
-  useEffect(() => {
-    // This function will be called by the Google Translate script
-    window.googleTranslateElementInit = googleTranslateElementInit;
-  }, [googleTranslateElementInit]);
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const langPair = e.target.value;
+    if (langPair) {
+        const lang = langPair.split('|')[1];
+        doGTranslate(lang);
+    }
+  }
 
   return (
     <div className="language-switcher">
       <select 
-        onChange={(e) => doGTranslate(e.target.value.split('|')[1])} 
+        onChange={handleLanguageChange} 
         className="px-3 py-2 rounded-lg bg-white/20 text-white border-none text-sm cursor-pointer focus:outline-none backdrop-blur-sm"
       >
         <option value="en|en">🇺🇸 English</option>
