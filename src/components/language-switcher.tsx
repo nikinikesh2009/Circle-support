@@ -9,14 +9,17 @@ declare global {
 
 export function LanguageSwitcher() {
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    window.doGTranslate(e.target.value);
-  }
+    if (window.doGTranslate) {
+      window.doGTranslate(e.target);
+    }
+  };
 
   return (
     <div className="language-switcher">
-      <select 
-        onChange={handleLanguageChange} 
+      <select
+        onChange={handleLanguageChange}
         className="px-3 py-2 rounded-lg bg-white/20 text-white border-none text-sm cursor-pointer focus:outline-none backdrop-blur-sm"
+        aria-label="Language selector"
       >
         <option value="en|en">🇺🇸 English</option>
         <option value="en|si">🇱🇰 Sinhala</option>
