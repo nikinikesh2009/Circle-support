@@ -1,0 +1,316 @@
+
+{
+    "hero": {
+      "title": "Willkommen beim Circle Support 💬",
+      "subtitle": "Finden Sie Antworten, fragen Sie die KI oder erhalten Sie Hilfe von unserem Team – schnell und einfach.",
+      "cta": {
+        "askAI": "Jetzt KI fragen",
+        "browseGuides": "Hilfeleitfäden durchsuchen"
+      }
+    },
+    "search": {
+      "placeholder": "Suchen Sie Ihre Frage... 🔍"
+    },
+    "status": {
+      "operational": "✅ Alle Systeme sind betriebsbereit"
+    },
+    "trending": {
+      "title": "📈 Top-Trendfragen",
+      "description": "Hier sehen Sie, wonach andere Benutzer gerade fragen.",
+      "questions": [
+        {
+          "icon": "🚀",
+          "text": "trending.questions.join"
+        },
+        {
+          "icon": "🤖",
+          "text": "trending.questions.ai"
+        },
+        {
+          "icon": "🔐",
+          "text": "trending.questions.password"
+        },
+        {
+          "icon": "💬",
+          "text": "trending.questions.dm"
+        },
+        {
+          "icon": "⚡",
+          "text": "trending.questions.trending"
+        }
+      ]
+    },
+    "trending.questions.join": "Wie man einem Kreis beitritt",
+    "trending.questions.ai": "Wie KI-Empfehlungen funktionieren",
+    "trending.questions.password": "So setzen Sie Ihr Passwort zurück",
+    "trending.questions.dm": "So schreiben Sie jemandem eine DM",
+    "trending.questions.trending": "Wie Trendkreise erstellt werden",
+    "quickActions": {
+      "title": "🧭 Schnellaktionspanel",
+      "description": "Müssen Sie etwas Bestimmtes tun? Hier sind einige Quicklinks.",
+      "ticket": "Ticket erstellen",
+      "contact": "Support kontaktieren",
+      "academy": "Circle Academy",
+      "report": "Ein Problem melden"
+    },
+    "videos": {
+      "title": "🎥 Video-Tutorials",
+      "description": "Sehen Sie sich diese kurzen Videos an, um zu lernen, wie man Circle benutzt.",
+      "items": [
+        {
+          "title": "videos.items.join",
+          "duration": "1:24",
+          "thumbnail": "https://picsum.photos/seed/1/600/400"
+        },
+        {
+          "title": "videos.items.rules",
+          "duration": "2:05",
+          "thumbnail": "https://picsum.photos/seed/2/600/400"
+        },
+        {
+          "title": "videos.items.dm",
+          "duration": "1:45",
+          "thumbnail": "https://picsum.photos/seed/3/600/400"
+        },
+        {
+          "title": "videos.items.profile",
+          "duration": "0:58",
+          "thumbnail": "https://picsum.photos/seed/4/600/400"
+        }
+      ]
+    },
+    "videos.items.join": "Wie Sie Ihrem ersten Kreis beitreten",
+    "videos.items.rules": "Trendregeln verstehen",
+    "videos.items.dm": "DM- und Datenschutzeinstellungen",
+    "videos.items.profile": "Anpassen Ihres Profils",
+    "faq": {
+      "title": "📖 FAQ-Kategorien",
+      "description": "Entdecken Sie unsere am häufigsten gestellten Fragen, nach Kategorien geordnet.",
+      "noResults": "Keine Fragen gefunden. Versuchen Sie einen anderen Suchbegriff.",
+      "categories": [
+        {
+          "category": "faq.categories.account.category",
+          "icon": "🛡️",
+          "items": [
+            {
+              "question": "faq.categories.account.items.0.question",
+              "answer": "faq.categories.account.items.0.answer"
+            },
+            {
+              "question": "faq.categories.account.items.1.question",
+              "answer": "faq.categories.account.items.1.answer"
+            },
+            {
+              "question": "faq.categories.account.items.2.question",
+              "answer": "faq.categories.account.items.2.answer"
+            }
+          ]
+        }
+      ]
+    },
+    "faq.categories.account.category": "Konto & Sicherheit",
+    "faq.categories.account.items.0.question": "Wie erstelle ich ein Circle-Konto?",
+    "faq.categories.account.items.0.answer": "Sie können ein Circle-Konto erstellen, indem Sie unsere App aus dem App Store oder von Google Play herunterladen und sich mit Ihrer E-Mail-Adresse oder Ihren Social-Media-Konten anmelden. Befolgen Sie einfach die Anweisungen auf dem Bildschirm, um Ihr Profil einzurichten.",
+    "faq.categories.account.items.1.question": "So setzen Sie Ihr Passwort zurück",
+    "faq.categories.account.items.1.answer": "Tippen Sie auf dem Anmeldebildschirm auf „Passwort vergessen“. Geben Sie die mit Ihrem Konto verknüpfte E-Mail-Adresse ein, und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts. Wenn Sie immer noch Probleme haben, wenden Sie sich bitte an unser Support-Team.",
+    "faq.categories.account.items.2.question": "Wie kann ich meine Profilinformationen ändern?",
+    "faq.categories.account.items.2.answer": "Sie können Ihr Profil bearbeiten, indem Sie in der App zur Registerkarte „Profil“ navigieren. Von dort aus können Sie Ihren Namen, Ihr Profilbild, Ihre Biografie und andere persönliche Daten aktualisieren.",
+    "faq.categories.circles.category": "Kreisen beitreten und verlassen",
+    "faq.categories.circles.items.0.question": "Wie man einem Kreis beitritt?",
+    "faq.categories.circles.items.0.answer": "Sie können Kreise in der Registerkarte „Erkunden“ der App finden und ihnen beitreten. Wir haben auch vorgefertigte gemeinsame Kreise, denen Sie sofort beitreten können. Außerdem wird unsere KI Ihnen basierend auf Ihrer Aktivität und Ihren Interessen relevante Kreise empfehlen.",
+    "faq.categories.circles.items.1.question": "Wie verlasse ich einen Kreis?",
+    "faq.categories.circles.items.1.answer": "Um einen Kreis zu verlassen, gehen Sie zur Hauptseite des Kreises, tippen Sie auf das Einstellungssymbol (normalerweise drei Punkte) und wählen Sie „Kreis verlassen“. Ihre Beiträge und Kommentare bleiben erhalten, aber Sie erhalten keine Benachrichtigungen mehr von diesem Kreis.",
+    "contact": {
+      "title": "Haben Sie noch Fragen?",
+      "description": "Wenn Sie keine Antwort finden konnten, senden Sie ein Ticket und unser Support-Team wird sich bei Ihnen melden.",
+      "form": {
+        "topic": {
+          "label": "Thema",
+          "placeholder": "Wählen Sie ein Thema...",
+          "options": {
+            "login": "Anmeldeproblem",
+            "bug": "Fehlerbericht",
+            "ai": "Problem mit dem KI-Assistenten",
+            "abuse": "Missbrauch melden",
+            "feature": "Funktionswunsch",
+            "other": "Andere"
+          }
+        },
+        "email": {
+          "label": "Ihre E-Mail",
+          "placeholder": "you@example.com"
+        },
+        "message": {
+          "label": "Nachricht",
+          "placeholder": "Bitte beschreiben Sie Ihr Problem ausführlich..."
+        },
+        "submit": "Ticket einreichen",
+        "submitting": "Wird eingereicht..."
+      },
+      "toast": {
+        "success": {
+          "title": "Ticket eingereicht!",
+          "description": "Wir haben Ihre Anfrage erhalten und werden uns in Kürze bei Ihnen melden."
+        },
+        "error": {
+          "title": "Einreichung fehlgeschlagen",
+          "description": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+        }
+      }
+    },
+    "footer": {
+      "copyright": "Circle Inc. Alle Rechte vorbehalten.",
+      "about": "Über Circle",
+      "terms": "Bedingungen & Datenschutz",
+      "contact": "Kontakt"
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+-
+  {}
+  

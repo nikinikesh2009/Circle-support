@@ -1,68 +1,33 @@
+'use client'
 
-'use client';
+import { usePathname, useRouter } from 'next/navigation'
+import { languages, type Locale } from '@/i18n-config'
 
-import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
-import { getAITranslation } from '@/app/actions';
-import { defaultLocale, locale, type LocaleStrings } from '@/lib/locale';
-import { get } from 'lodash';
+export function LanguageSwitcher({ locale }: { locale: Locale }) {
+  const pathname = usePathname()
+  const router = useRouter()
 
-interface TranslationContextType {
-  language: string;
-  setLanguage: (language: string) => void;
-  t: (key: string, fallback?: string) => string;
-  isLoading: boolean;
-}
-
-const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
-
-export const TranslationProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<string>('en');
-  const [translations, setTranslations] = useState<LocaleStrings>(locale);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    const fetchTranslations = async () => {
-      if (language === 'en') {
-        setTranslations(locale);
-        return;
-      }
-      setIsLoading(true);
-      try {
-        const result = await getAITranslation(locale, language);
-        if (result) {
-          setTranslations(result as LocaleStrings);
-        } else {
-          // Fallback to default if translation fails
-          setTranslations(locale);
-        }
-      } catch (error) {
-        console.error('Failed to fetch translations:', error);
-        setTranslations(locale);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchTranslations();
-  }, [language]);
-
-  const t = useCallback((key: string, fallback?: string): string => {
-    // Basic key-path navigation
-    const result = get(translations, key, fallback || key);
-    return result;
-  }, [translations]);
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = e.target.value
+    // newPath will be /<new_locale>/ or /<new_locale>/<path>
+    const newPath = `/${newLocale}${pathname.substring(3)}`
+    router.replace(newPath)
+  }
 
   return (
-    <TranslationContext.Provider value={{ language, setLanguage, t, isLoading }}>
-      {children}
-    </TranslationContext.Provider>
-  );
-};
-
-export const useTranslation = (): TranslationContextType => {
-  const context = useContext(TranslationContext);
-  if (context === undefined) {
-    throw new Error('useTranslation must be used within a TranslationProvider');
-  }
-  return context;
-};
+    <div className="language-switcher">
+      <select
+        onChange={handleLanguageChange}
+        value={locale}
+        className="px-3 py-2 rounded-lg bg-white/20 text-white border-none text-sm cursor-pointer focus:outline-none backdrop-blur-sm"
+        aria-label="Language selector"
+      >
+        {languages.map(({ code, name, flag }) => (
+          <option key={code} value={code}>
+            {flag} {name}
+          </option>
+        ))}
+      </select>
+    </div>
+  )
+}

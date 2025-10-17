@@ -1,4 +1,3 @@
-import { locale } from "./locale";
 
 export type FaqItem = {
   question: string;
@@ -44,9 +43,19 @@ export const faqData: FaqCategory[] = [
       }
     ]
   },
-  // Simplified for brevity, add other categories as needed
 ];
 
-export const trendingQuestions = locale.trending.questions;
+export const trendingQuestions = [
+    { icon: '🚀', text: 'trending.questions.join' },
+    { icon: '🤖', text: 'trending.questions.ai' },
+    { icon: '🔐', text: 'trending.questions.password' },
+    { icon: '💬', text: 'trending.questions.dm' },
+    { icon: '⚡', text: 'trending.questions.trending' }
+];
 
-export const videoTutorials = locale.videos.items;
+export const videoTutorials = [
+    { title: 'videos.items.join', duration: '1:24', thumbnail: 'https://picsum.photos/seed/1/600/400' },
+    { title: 'videos.items.rules', duration: '2:05', thumbnail: 'https://picsum.photos/seed/2/600/400' },
+    { title: 'videos.items.dm', duration: '1:45', thumbnail: 'https://picsum.photos/seed/3/600/400' },
+    { title: 'videos.items.profile', duration: '0:58', thumbnail: 'https://picsum.photos/seed/4/600/400' }
+];

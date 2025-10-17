@@ -1,36 +1,26 @@
-'use client';
+'use client'
 
-import { useTranslation } from '@/context/translation-context';
+import { usePathname, useRouter } from 'next/navigation'
+import { languages, type Locale } from '@/i18n-config'
 
-export function LanguageSwitcher() {
-  const { setLanguage, isLoading } = useTranslation();
+export function LanguageSwitcher({ locale }: { locale: Locale }) {
+  const pathname = usePathname()
+  const router = useRouter()
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setLanguage(e.target.value);
-  };
+    const newLocale = e.target.value
+    // newPath will be /<new_locale>/ or /<new_locale>/<path>
+    const newPath = `/${newLocale}${pathname.substring(3)}`
+    router.replace(newPath)
+  }
 
   return (
     <div className="language-switcher">
       <select
         onChange={handleLanguageChange}
+        value={locale}
         className="px-3 py-2 rounded-lg bg-white/20 text-white border-none text-sm cursor-pointer focus:outline-none backdrop-blur-sm"
         aria-label="Language selector"
-        disabled={isLoading}
       >
-        <option value="en">🇺🇸 English</option>
-        <option value="si">🇱🇰 Sinhala</option>
-        <option value="ta">🇱🇰 Tamil</option>
-        <option value="zh-CN">🇨🇳 Chinese</option>
-        <option value="hi">🇮🇳 Hindi</option>
-        <option value="ko">🇰🇷 Korean</option>
-        <option value="tl">🇵🇭 Tagalog</option>
-        <option value="id">🇮🇩 Indonesian</option>
-        <option value="es">🇪🇸 Spanish</option>
-        <option value="fr">🇫🇷 French</option>
-        <option value="de">🇩🇪 German</option>
-        <option value="ja">🇯🇵 Japanese</option>
-        <option value="ru">🇷🇺 Russian</option>
-      </select>
-    </div>
-  );
-}
+        {languages.map(({ code, name, flag }) => (
+          <option key

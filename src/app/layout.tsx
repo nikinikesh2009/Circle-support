@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 import { PT_Sans } from 'next/font/google';
 import { TranslationProvider } from '@/context/translation-context';
+import { type Locale } from '@/i18n-config';
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
@@ -20,18 +21,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: Locale };
 }>) {
   return (
-    <html lang="en" className={ptSans.variable} suppressHydrationWarning>
-      <head />
-      <body>
-        <TranslationProvider>
+    <TranslationProvider locale={params.locale}>
+      <html lang={params.locale} className={ptSans.variable} suppressHydrationWarning>
+        <body className='bg-background'>
           {children}
-        </TranslationProvider>
-        <Toaster />
-      </body>
-    </html>
+          <Toaster />
+        </body>
+      </html>
+    </TranslationProvider>
   );
 }
