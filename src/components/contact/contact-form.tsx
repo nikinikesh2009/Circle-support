@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useToast } from "@/hooks/use-toast"
-import { submitTicket } from '@/app/actions';
+import supporterData from '@/lib/emails.json';
 
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -38,21 +38,35 @@ export function ContactForm({ dictionary }: { dictionary: LocaleStrings }) {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    const result = await submitTicket(values);
-    setIsSubmitting(false);
 
-    if (result.success) {
+    try {
+      // 1. Pick a random supporter from the imported JSON
+      const supporters = supporterData.supporters;
+      const assignedTo = supporters[Math.floor(Math.random() * supporters.length)];
+
+      // 2. Construct the mailto link
+      const subject = encodeURIComponent(`Support Ticket: ${values.topic}`);
+      const body = encodeURIComponent(`From: ${values.email}\n\n${values.message}`);
+      const mailtoLink = `mailto:${assignedTo}?subject=${subject}&body=${body}`;
+
+      // 3. Open the user's default email client
+      window.location.href = mailtoLink;
+
       toast({
         title: t('contact.toast.success.title'),
-        description: t('contact.toast.success.description'),
+        description: "Your email client has been opened to send the message.",
       });
       form.reset();
-    } else {
+
+    } catch (error) {
+      console.error('Mailto link creation error:', error);
       toast({
         title: t('contact.toast.error.title'),
-        description: result.error || t('contact.toast.error.description'),
+        description: t('contact.toast.error.description'),
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
