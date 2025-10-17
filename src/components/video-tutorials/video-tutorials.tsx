@@ -1,3 +1,5 @@
+'use client';
+
 import { videoTutorials } from '@/lib/data';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
@@ -42,6 +44,7 @@ export default function VideoTutorials() {
                                         <div className="absolute bottom-0 left-0 bg-black/50 text-white px-3 py-1 text-sm rounded-tr-lg">
                                             {video.duration}
                                         </div>
+
                                     </CardContent>
                                     <div className="p-4 bg-card">
                                       <h3 className="font-semibold text-lg">{t(video.title)}</h3>

@@ -1,3 +1,5 @@
+'use client';
+
 import { CheckCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { useTranslation } from '@/context/translation-context';

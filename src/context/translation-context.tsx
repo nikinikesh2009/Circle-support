@@ -1,33 +1,40 @@
-'use client'
+'use client';
 
-import { usePathname, useRouter } from 'next/navigation'
-import { languages, type Locale } from '@/i18n-config'
+import { createContext, useContext, ReactNode } from 'react';
+import get from 'lodash/get';
+import { type LocaleStrings } from '@/lib/locale';
 
-export function LanguageSwitcher({ locale }: { locale: Locale }) {
-  const pathname = usePathname()
-  const router = useRouter()
+type TranslationContextType = {
+  dictionary: LocaleStrings;
+  t: (key: string) => string;
+};
 
-  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value
-    // newPath will be /<new_locale>/ or /<new_locale>/<path>
-    const newPath = `/${newLocale}${pathname.substring(3)}`
-    router.replace(newPath)
-  }
+const TranslationContext = createContext<TranslationContextType | null>(null);
+
+export function TranslationProvider({
+  dictionary,
+  children,
+}: {
+  dictionary: LocaleStrings;
+  children: ReactNode;
+}) {
+
+  const t = (key: string): string => {
+    const value = get(dictionary, key);
+    return typeof value === 'string' ? value : key;
+  };
 
   return (
-    <div className="language-switcher">
-      <select
-        onChange={handleLanguageChange}
-        value={locale}
-        className="px-3 py-2 rounded-lg bg-white/20 text-white border-none text-sm cursor-pointer focus:outline-none backdrop-blur-sm"
-        aria-label="Language selector"
-      >
-        {languages.map(({ code, name, flag }) => (
-          <option key={code} value={code}>
-            {flag} {name}
-          </option>
-        ))}
-      </select>
-    </div>
-  )
+    <TranslationContext.Provider value={{ dictionary, t }}>
+      {children}
+    </TranslationContext.Provider>
+  );
+}
+
+export function useTranslation() {
+  const context = useContext(TranslationContext);
+  if (!context) {
+    throw new Error('useTranslation must be used within a TranslationProvider');
+  }
+  return context;
 }

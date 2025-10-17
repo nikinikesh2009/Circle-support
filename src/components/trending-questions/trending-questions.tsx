@@ -1,3 +1,5 @@
+'use client';
+
 import { trendingQuestions } from '@/lib/data';
 import { Card } from '@/components/ui/card';
 import { useTranslation } from '@/context/translation-context';

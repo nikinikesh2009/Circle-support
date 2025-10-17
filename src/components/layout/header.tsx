@@ -1,18 +1,26 @@
 import Link from 'next/link';
 import { CircleLogo } from '@/components/icons';
 import { LanguageSwitcher } from '../language-switcher';
+import { type Locale } from '@/i18n-config';
+import { type LocaleStrings } from '@/lib/locale';
 
-export default function Header() {
+
+interface HeaderProps {
+  locale: Locale;
+  dictionary: LocaleStrings;
+}
+
+export default function Header({ locale, dictionary }: HeaderProps) {
   return (
     <header className="absolute top-0 z-10 w-full bg-transparent py-4">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href={`/${locale}`} className="flex items-center gap-3">
           <CircleLogo className="h-8 w-8 text-white" />
           <span className="text-2xl font-bold tracking-tight text-white">
             Circle
           </span>
         </Link>
-        <LanguageSwitcher />
+        <LanguageSwitcher locale={locale} />
       </div>
     </header>
   );

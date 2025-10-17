@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { LifeBuoy, MessageSquareWarning, PenSquare, School } from 'lucide-react';
 import { useTranslation } from '@/context/translation-context';

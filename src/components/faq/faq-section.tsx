@@ -1,3 +1,5 @@
+'use client';
+
 import FaqClient from './faq-client';
 import { faqData } from '@/lib/data';
 import { useTranslation } from '@/context/translation-context';

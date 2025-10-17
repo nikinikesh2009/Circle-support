@@ -4,6 +4,7 @@ import './globals.css';
 import { PT_Sans } from 'next/font/google';
 import { TranslationProvider } from '@/context/translation-context';
 import { type Locale } from '@/i18n-config';
+import { getDictionary } from '@/lib/get-dictionary';
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
@@ -19,21 +20,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: Locale };
 }>) {
+  const dictionary = await getDictionary(params.locale);
+
   return (
-    <TranslationProvider locale={params.locale}>
-      <html lang={params.locale} className={ptSans.variable} suppressHydrationWarning>
-        <body className='bg-background'>
+    <html lang={params.locale} className={ptSans.variable} suppressHydrationWarning>
+      <body>
+        <TranslationProvider dictionary={dictionary}>
           {children}
           <Toaster />
-        </body>
-      </html>
-    </TranslationProvider>
+        </TranslationProvider>
+      </body>
+    </html>
   );
 }

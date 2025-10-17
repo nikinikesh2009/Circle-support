@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
-import { i18n, type Locale } from '@/i18n-config'
+import { i18n, languages, type Locale } from '@/i18n-config'
 
 export function LanguageSwitcher({ locale }: { locale: Locale }) {
   const pathname = usePathname()
@@ -27,9 +27,9 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
         className="px-3 py-2 rounded-lg bg-white/20 text-white border-none text-sm cursor-pointer focus:outline-none backdrop-blur-sm"
         aria-label="Language selector"
       >
-        {i18n.locales.map((loc) => (
-          <option key={loc} value={loc}>
-            {loc.toUpperCase()}
+        {languages.map(({code, name, flag}) => (
+          <option key={code} value={code}>
+            {flag} {name}
           </option>
         ))}
       </select>
