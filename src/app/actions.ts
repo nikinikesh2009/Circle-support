@@ -5,6 +5,7 @@ import { faqData } from '@/lib/data';
 import { chatWithCircleSupportAI } from '@/ai/flows/circle-support-ai';
 import { translateText } from '@/ai/flows/translate-text';
 import { type LocaleStrings } from '@/lib/locale';
+import supporterData from '@/lib/emails.json';
 
 const ticketSchema = z.object({
   topic: z.string(),
@@ -16,10 +17,32 @@ const ticketSchema = z.object({
 export async function submitTicket(values: z.infer<typeof ticketSchema>) {
   try {
     const validatedData = ticketSchema.parse(values);
-    console.log('New ticket submitted:', validatedData);
-    
-    // In a real application, you would save this to a database (e.g., Firebase, Supabase)
-    // await db.collection('tickets').add(validatedData);
+
+    // 1. Pick a random supporter
+    const supporters = supporterData.supporters;
+    const assignedTo = supporters[Math.floor(Math.random() * supporters.length)];
+
+    console.log(`New ticket for: ${assignedTo}`, validatedData);
+
+    // 2. Send to backend API
+    // We get the absolute URL for the API endpoint so it works on Vercel
+    const apiEndpoint = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}/api/send-mail`
+      : 'http://localhost:3000/api/send-mail';
+      
+    const response = await fetch(apiEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        ...validatedData, 
+        assignedTo,
+      })
+    });
+
+    if (!response.ok) {
+      const errorResult = await response.json();
+      throw new Error(errorResult.error || 'Failed to send email.');
+    }
 
     return { success: true };
   } catch (error) {
@@ -27,7 +50,8 @@ export async function submitTicket(values: z.infer<typeof ticketSchema>) {
     if (error instanceof z.ZodError) {
       return { success: false, error: "Validation failed." };
     }
-    return { success: false, error: 'An unexpected error occurred.' };
+    const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred.';
+    return { success: false, error: errorMessage };
   }
 }
 
