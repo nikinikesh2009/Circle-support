@@ -110,7 +110,7 @@
     "toast": {
       "success": {
         "title": "チケットが送信されました！",
-        "description": "リクエストを受け付けました。まもなくご連絡いたします。"
+        "description": "メッセージを送信するためにメールクライアントが開かれました。"
       },
       "error": {
         "title": "送信に失敗しました",
@@ -119,7 +119,7 @@
     }
   },
   "footer": {
-    "copyright": "Circle Inc. All rights reserved.",
+    "copyright": "Circle Org. All rights reserved.",
     "about": "Circleについて",
     "terms": "利用規約とプライバシー",
     "contact": "お問い合わせ"

@@ -110,7 +110,7 @@
     "toast": {
       "success": {
         "title": "Ticket eingereicht!",
-        "description": "Wir haben Ihre Anfrage erhalten und werden uns in Kürze bei Ihnen melden."
+        "description": "Ihre E-Mail-Anwendung wurde geöffnet, um die Nachricht zu senden."
       },
       "error": {
         "title": "Einreichung fehlgeschlagen",
@@ -119,7 +119,7 @@
     }
   },
   "footer": {
-    "copyright": "Circle Inc. Alle Rechte vorbehalten.",
+    "copyright": "Circle Org. Alle Rechte vorbehalten.",
     "about": "Über Circle",
     "terms": "Bedingungen & Datenschutz",
     "contact": "Kontakt"

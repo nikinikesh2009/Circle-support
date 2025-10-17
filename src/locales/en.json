@@ -110,7 +110,7 @@
     "toast": {
       "success": {
         "title": "Ticket Submitted!",
-        "description": "We've received your request and will get back to you soon."
+        "description": "Your email client has been opened to send the message."
       },
       "error": {
         "title": "Submission Failed",
@@ -119,7 +119,7 @@
     }
   },
   "footer": {
-    "copyright": "Circle Inc. All rights reserved.",
+    "copyright": "Circle Org. All rights reserved.",
     "about": "About Circle",
     "terms": "Terms & Privacy",
     "contact": "Contact"

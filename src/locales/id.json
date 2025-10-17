@@ -110,7 +110,7 @@
     "toast": {
       "success": {
         "title": "Tiket Terkirim!",
-        "description": "Kami telah menerima permintaan Anda dan akan segera menghubungi Anda."
+        "description": "Klien email Anda telah dibuka untuk mengirim pesan."
       },
       "error": {
         "title": "Pengiriman Gagal",
@@ -119,7 +119,7 @@
     }
   },
   "footer": {
-    "copyright": "Circle Inc. Semua hak dilindungi undang-undang.",
+    "copyright": "Circle Org. Semua hak dilindungi undang-undang.",
     "about": "Tentang Circle",
     "terms": "Syarat & Privasi",
     "contact": "Kontak"

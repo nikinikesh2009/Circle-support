@@ -110,7 +110,7 @@
     "toast": {
       "success": {
         "title": "¡Ticket enviado!",
-        "description": "Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto."
+        "description": "Se ha abierto tu cliente de correo electrónico para enviar el mensaje."
       },
       "error": {
         "title": "Error al enviar",
@@ -119,7 +119,7 @@
     }
   },
   "footer": {
-    "copyright": "Circle Inc. Todos los derechos reservados.",
+    "copyright": "Circle Org. Todos los derechos reservados.",
     "about": "Acerca de Circle",
     "terms": "Términos y privacidad",
     "contact": "Contacto"

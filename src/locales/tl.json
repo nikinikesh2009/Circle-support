@@ -110,7 +110,7 @@
     "toast": {
       "success": {
         "title": "Naipasa ang Ticket!",
-        "description": "Natanggap na namin ang iyong kahilingan at babalikan ka namin sa lalong madaling panahon."
+        "description": "Binuksan ang iyong email client para ipadala ang mensahe."
       },
       "error": {
         "title": "Nabigo ang Pagsumite",
@@ -119,7 +119,7 @@
     }
   },
   "footer": {
-    "copyright": "Circle Inc. Lahat ng karapatan ay nakalaan.",
+    "copyright": "Circle Org. Lahat ng karapatan ay nakalaan.",
     "about": "Tungkol sa Circle",
     "terms": "Mga Tuntunin at Privacy",
     "contact": "Makipag-ugnayan"
