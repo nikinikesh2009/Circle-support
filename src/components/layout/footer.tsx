@@ -1,30 +1,31 @@
 import Link from "next/link";
-import { CircleLogo } from "@/components/icons";
+import { Globe } from 'lucide-react';
+import { Button } from "../ui/button";
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-card">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 md:flex-row">
+    <footer className="border-t bg-card relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5" style={{ background: 'linear-gradient(90deg, #38E1B0 0%, #2AB2FF 100%)' }}></div>
+      <div className="container relative mx-auto flex flex-col items-center justify-between gap-6 px-4 py-8 md:flex-row">
         <div className="flex items-center gap-2">
-          <CircleLogo className="h-6 w-6 text-muted-foreground" />
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Circle Inc. All rights reserved.
           </p>
         </div>
-        <nav className="flex gap-4">
-          <Link href="https://home.circle.com" className="text-sm text-muted-foreground hover:text-foreground" target="_blank" rel="noopener noreferrer">
-            Home
-          </Link>
-          <Link href="https://app.circle.com" className="text-sm text-muted-foreground hover:text-foreground" target="_blank" rel="noopener noreferrer">
-            App
+        <nav className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+          <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+            About Circle
           </Link>
           <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-            Privacy Policy
+            Terms & Privacy
           </Link>
           <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-            Terms of Service
+            Contact
           </Link>
         </nav>
+        <Button variant="outline" className="bg-transparent">
+          <Globe className="h-4 w-4 mr-2" /> Language
+        </Button>
       </div>
     </footer>
   );
