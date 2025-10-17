@@ -6,6 +6,7 @@ import { chatWithCircleSupportAI } from '@/ai/flows/circle-support-ai';
 import { translateText } from '@/ai/flows/translate-text';
 import { type LocaleStrings } from '@/lib/locale';
 import supporterData from '@/lib/emails.json';
+import nodemailer from 'nodemailer';
 
 const ticketSchema = z.object({
   topic: z.string(),
@@ -13,7 +14,6 @@ const ticketSchema = z.object({
   message: z.string(),
 });
 
-// Mock submission function
 export async function submitTicket(values: z.infer<typeof ticketSchema>) {
   try {
     const validatedData = ticketSchema.parse(values);
@@ -24,25 +24,47 @@ export async function submitTicket(values: z.infer<typeof ticketSchema>) {
 
     console.log(`New ticket for: ${assignedTo}`, validatedData);
 
-    // 2. Send to backend API
-    // We get the absolute URL for the API endpoint so it works on Vercel
-    const apiEndpoint = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}/api/send-mail`
-      : 'http://localhost:3000/api/send-mail';
-      
-    const response = await fetch(apiEndpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        ...validatedData, 
-        assignedTo,
-      })
+    // 2. Send email directly using nodemailer
+    const mailUser = process.env.MAIL_USER;
+    const mailPass = process.env.MAIL_PASS;
+
+    if (!mailUser || !mailPass) {
+      console.error('Email credentials (MAIL_USER, MAIL_PASS) are not set in .env file.');
+      return { success: false, error: 'Server is not configured for sending emails.' };
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: mailUser,
+        pass: mailPass,
+      },
     });
 
-    if (!response.ok) {
-      const errorResult = await response.json();
-      throw new Error(errorResult.error || 'Failed to send email.');
-    }
+    await transporter.sendMail({
+      from: `"Circle Support" <${mailUser}>`,
+      to: assignedTo,
+      replyTo: validatedData.email,
+      subject: `📩 New Support Ticket: ${validatedData.topic}`,
+      text: `A new support ticket has been submitted.\n\nFrom: ${validatedData.email}\nTopic: ${validatedData.topic}\n\nMessage:\n${validatedData.message}`,
+      html: `
+        <div style="font-family: sans-serif; line-height: 1.6;">
+          <h2>New Support Ticket</h2>
+          <p>A new support request has been assigned to you.</p>
+          <hr>
+          <p><b>From:</b> ${validatedData.email}</p>
+          <p><b>Topic:</b> ${validatedData.topic}</p>
+          <h3>Message:</h3>
+          <p style="background-color: #f5f5f5; padding: 15px; border-radius: 8px;">
+            ${validatedData.message.replace(/\n/g, '<br>')}
+          </p>
+          <hr>
+          <p><small>You can reply directly to this email to respond to the user.</small></p>
+        </div>
+      `,
+    });
 
     return { success: true };
   } catch (error) {
