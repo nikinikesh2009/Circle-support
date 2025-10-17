@@ -18,3 +18,5 @@ export const languages: { name: string; code: Locale; flag: string }[] = [
     { name: 'French', code: 'fr', flag: '🇫🇷' },
     { name: 'German', code: 'de', flag: '🇩🇪' },
     { name: 'Japanese', code: 'ja', flag: '🇯🇵' },
+    { name: 'Russian', code: 'ru', flag: '🇷🇺' },
+];
