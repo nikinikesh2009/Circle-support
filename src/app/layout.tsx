@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 import { PT_Sans } from 'next/font/google';
@@ -25,9 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={ptSans.variable} suppressHydrationWarning>
       <head />
-      <body className="font-body antialiased">
+      <body>
+        <div id="google_translate_element" style={{ display: 'none' }}></div>
         {children}
         <Toaster />
+        <Script
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

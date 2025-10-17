@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { CircleLogo } from '@/components/icons';
-import { Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { LanguageSwitcher } from '../language-switcher';
 
 export default function Header() {
   return (
@@ -13,10 +12,7 @@ export default function Header() {
             Circle
           </span>
         </Link>
-        <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-          <Globe className="h-5 w-5" />
-          <span className="sr-only">Select language</span>
-        </Button>
+        <LanguageSwitcher />
       </div>
     </header>
   );
