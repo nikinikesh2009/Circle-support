@@ -6,8 +6,9 @@ import Image from 'next/image';
 import { PlayCircle } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
-export default function VideoTutorials() {
+export default function VideoTutorials({ dictionary }: { dictionary: LocaleStrings }) {
     const { t } = useTranslation();
     return (
         <section id="videos" className="w-full py-12 md:py-20">
@@ -47,7 +48,7 @@ export default function VideoTutorials() {
 
                                     </CardContent>
                                     <div className="p-4 bg-card">
-                                      <h3 className="font-semibold text-lg">{t(video.title)}</h3>
+                                      <h3 className="font-semibold text-lg">{t(video.title as any)}</h3>
                                     </div>
                                 </Card>
                             </div>

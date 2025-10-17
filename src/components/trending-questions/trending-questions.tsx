@@ -3,8 +3,9 @@
 import { trendingQuestions } from '@/lib/data';
 import { Card } from '@/components/ui/card';
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
-export default function TrendingQuestions() {
+export default function TrendingQuestions({ dictionary }: { dictionary: LocaleStrings }) {
     const { t } = useTranslation();
     return (
         <section id="trending" className="w-full py-12 md:py-20">

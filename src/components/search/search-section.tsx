@@ -3,8 +3,9 @@ import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
-export default function SearchSection() {
+export default function SearchSection({ dictionary }: { dictionary: LocaleStrings }) {
   const { t } = useTranslation();
   return (
     <section className="w-full pb-12 -mt-16 z-10 relative">

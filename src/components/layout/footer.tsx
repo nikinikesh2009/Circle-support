@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
-export default function Footer() {
+export default function Footer({ dictionary }: { dictionary: LocaleStrings }) {
   const { t } = useTranslation();
   
   return (

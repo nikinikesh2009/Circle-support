@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { LifeBuoy, MessageSquareWarning, PenSquare, School } from 'lucide-react';
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
 const actionKeys = [
     { icon: PenSquare, textKey: 'quickActions.ticket', href: '#' },
@@ -11,7 +12,7 @@ const actionKeys = [
     { icon: MessageSquareWarning, textKey: 'quickActions.report', href: '#' },
 ];
 
-export default function QuickActions() {
+export default function QuickActions({ dictionary }: { dictionary: LocaleStrings }) {
     const { t } = useTranslation();
 
     return (

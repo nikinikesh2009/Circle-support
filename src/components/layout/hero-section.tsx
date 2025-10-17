@@ -2,9 +2,10 @@
 import { Button } from '@/components/ui/button';
 import { BookOpen, MessageSquare } from 'lucide-react';
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
 
-export default function Hero() {
+export default function Hero({ dictionary }: { dictionary: LocaleStrings }) {
   const { t } = useTranslation();
   
   const handleAskAI = () => {

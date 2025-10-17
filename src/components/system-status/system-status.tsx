@@ -3,8 +3,9 @@
 import { CheckCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
-export default function SystemStatus() {
+export default function SystemStatus({ dictionary }: { dictionary: LocaleStrings }) {
   const { t } = useTranslation();
   return (
     <section className="w-full py-8">

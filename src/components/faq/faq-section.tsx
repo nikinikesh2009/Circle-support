@@ -3,8 +3,9 @@
 import FaqClient from './faq-client';
 import { faqData } from '@/lib/data';
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
-export default function Faq() {
+export default function Faq({ dictionary }: { dictionary: LocaleStrings }) {
   const { t } = useTranslation();
   
   return (

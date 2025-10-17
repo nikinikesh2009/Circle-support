@@ -14,6 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useState } from 'react';
 import { useTranslation } from '@/context/translation-context';
+import { type LocaleStrings } from '@/lib/locale';
 
 const formSchema = z.object({
   topic: z.string().min(1, 'Please select a topic.'),
@@ -21,7 +22,7 @@ const formSchema = z.object({
   message: z.string().min(10, 'Message must be at least 10 characters long.').max(2000),
 });
 
-export function ContactForm() {
+export function ContactForm({ dictionary }: { dictionary: LocaleStrings }) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useTranslation();
