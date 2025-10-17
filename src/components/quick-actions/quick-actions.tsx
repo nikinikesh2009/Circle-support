@@ -5,15 +5,22 @@ import { LifeBuoy, MessageSquareWarning, PenSquare, School } from 'lucide-react'
 import { useTranslation } from '@/context/translation-context';
 import { type LocaleStrings } from '@/lib/locale';
 
-const actionKeys = [
-    { icon: PenSquare, textKey: 'quickActions.ticket', href: '#' },
-    { icon: LifeBuoy, textKey: 'quickActions.contact', href: '#' },
-    { icon: School, textKey: 'quickActions.academy', href: '#' },
-    { icon: MessageSquareWarning, textKey: 'quickActions.report', href: '#' },
-];
-
 export default function QuickActions({ dictionary }: { dictionary: LocaleStrings }) {
     const { t } = useTranslation();
+
+    const handleContactClick = () => {
+        const trigger = document.querySelector('button[aria-label="Open support chat"]') as HTMLElement;
+        if (trigger) {
+            trigger.click();
+        }
+    };
+
+    const actionKeys = [
+        { icon: PenSquare, textKey: 'quickActions.ticket', href: '#contact' },
+        { icon: LifeBuoy, textKey: 'quickActions.contact', onClick: handleContactClick, href: '#' },
+        { icon: School, textKey: 'quickActions.academy', href: '#videos' },
+        { icon: MessageSquareWarning, textKey: 'quickActions.report', href: '#contact' },
+    ];
 
     return (
         <section id="quick-actions" className="w-full py-12 md:py-20 bg-card">
@@ -26,8 +33,8 @@ export default function QuickActions({ dictionary }: { dictionary: LocaleStrings
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {actionKeys.map((action, index) => (
-                        <Button key={index} asChild variant="outline" className="h-28 flex-col gap-2 rounded-2xl text-lg font-semibold shadow-sm hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50 transition-all glow">
-                           <a href={action.href}>
+                         <Button key={index} asChild variant="outline" className="h-28 flex-col gap-2 rounded-2xl text-lg font-semibold shadow-sm hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50 transition-all glow">
+                           <a href={action.href} onClick={action.onClick}>
                              <action.icon className="h-8 w-8 mb-2 text-primary" />
                              {t(action.textKey)}
                            </a>
