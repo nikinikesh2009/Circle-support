@@ -23,9 +23,6 @@ export default function Footer() {
             Contact
           </Link>
         </nav>
-        <Button variant="outline" className="bg-transparent">
-          <Globe className="h-4 w-4 mr-2" /> Language
-        </Button>
       </div>
     </footer>
   );

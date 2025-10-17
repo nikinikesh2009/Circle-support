@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 declare global {
   interface Window {
@@ -10,16 +10,27 @@ declare global {
 
 export function LanguageSwitcher() {
 
-  const doGTranslate = (langPair: string) => {
-    if (!langPair) return;
-    const lang = langPair.split('|')[1];
+  const googleTranslateElementInit = useCallback(() => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,si,ta,zh-CN,hi,ko,tl,id,es,fr,de,ja,ru',
+        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+      },
+      'google_translate_element'
+    );
+  }, []);
+
+  const doGTranslate = (lang: string) => {
+    if (!lang) return;
     
     // Find the Google Translate dropdown
     const teCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
 
     if (document.getElementById('google_translate_element') == null || !teCombo) {
       // If it's not ready, retry after a short delay
-      setTimeout(() => { doGTranslate(langPair); }, 100);
+      setTimeout(() => { doGTranslate(lang); }, 100);
     } else {
       teCombo.value = lang;
       // Dispatch a change event to trigger the translation
@@ -30,23 +41,13 @@ export function LanguageSwitcher() {
 
   useEffect(() => {
     // This function will be called by the Google Translate script
-    window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: 'en',
-          includedLanguages: 'en,si,ta,zh-CN,hi,ko,tl,id,es,fr,de,ja,ru',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false,
-        },
-        'google_translate_element'
-      );
-    };
-  }, []);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, [googleTranslateElementInit]);
 
   return (
     <div className="language-switcher">
       <select 
-        onChange={(e) => doGTranslate(e.target.value)} 
+        onChange={(e) => doGTranslate(e.target.value.split('|')[1])} 
         className="px-3 py-2 rounded-lg bg-white/20 text-white border-none text-sm cursor-pointer focus:outline-none backdrop-blur-sm"
       >
         <option value="en|en">🇺🇸 English</option>
