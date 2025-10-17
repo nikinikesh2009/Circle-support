@@ -13,7 +13,7 @@ import { CircleLogo } from '../icons';
 
 interface Message {
   id: string;
-  role: 'user' | 'assistant' | 'system';
+  role: 'user' | 'assistant';
   content: string;
 }
 
@@ -52,7 +52,10 @@ export default function ChatWindow({ closeChat }: ChatWindowProps) {
     ];
     setMessages(newMessages);
 
-    const aiResponse = await askAI(userMessage);
+    // Pass only the relevant parts of the history
+    const historyForAI = messages.map(({ role, content }) => ({ role, content }));
+
+    const aiResponse = await askAI(userMessage, historyForAI);
 
     setMessages([
       ...newMessages,

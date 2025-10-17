@@ -3,24 +3,10 @@
  * @fileOverview AI-powered Circle suggestion flow.
  *
  * - suggestRelevantCircles - A function that suggests relevant Circles to a user based on their behavior.
- * - SuggestRelevantCirclesInput - The input type for the suggestRelevantCircles function.
- * - SuggestRelevantCirclesOutput - The return type for the suggestRelevantCircles function.
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
-
-const SuggestRelevantCirclesInputSchema = z.object({
-  userBehaviorData: z.string().describe('A summary of the user\'s behavior on the platform, including their activity, interests, and interactions.'),
-  availableCircles: z.array(z.string()).describe('A list of available Circle topics on the platform.'),
-});
-export type SuggestRelevantCirclesInput = z.infer<typeof SuggestRelevantCirclesInputSchema>;
-
-const SuggestRelevantCirclesOutputSchema = z.object({
-  suggestedCircles: z.array(z.string()).describe('A list of Circle topics that the AI suggests the user join.'),
-  reasoning: z.string().describe('The AI\'s reasoning for suggesting these specific Circles.'),
-});
-export type SuggestRelevantCirclesOutput = z.infer<typeof SuggestRelevantCirclesOutputSchema>;
+import { SuggestRelevantCirclesInputSchema, SuggestRelevantCirclesOutputSchema, type SuggestRelevantCirclesInput, type SuggestRelevantCirclesOutput } from '@/ai/schemas';
 
 export async function suggestRelevantCircles(input: SuggestRelevantCirclesInput): Promise<SuggestRelevantCirclesOutput> {
   return suggestRelevantCirclesFlow(input);
