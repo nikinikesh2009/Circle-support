@@ -1,0 +1,127 @@
+
+{
+  "hero": {
+    "title": "Maligayang pagdating sa Circle Support 💬",
+    "subtitle": "Maghanap ng mga sagot, magtanong sa AI, o humingi ng tulong mula sa aming team — mabilis at madali.",
+    "cta": {
+      "askAI": "Magtanong sa AI Ngayon",
+      "browseGuides": "Mag-browse ng Mga Gabay sa Tulong"
+    }
+  },
+  "search": {
+    "placeholder": "Hanapin ang iyong tanong... 🔍"
+  },
+  "status": {
+    "operational": "✅ Lahat ng sistema ay gumagana"
+  },
+  "trending": {
+    "title": "📈 Nangungunang Mga Tanong",
+    "description": "Narito ang mga tinatanong ng ibang mga user ngayon.",
+    "questions": {
+      "join": "Paano sumali sa isang Circle",
+      "ai": "Paano gumagana ang mga rekomendasyon ng AI",
+      "password": "Paano i-reset ang iyong password",
+      "dm": "Paano mag-DM sa isang tao",
+      "trending": "Paano nilikha ang mga Trending Circle"
+    }
+  },
+  "quickActions": {
+    "title": "🧭 Panel ng Mabilis na Aksyon",
+    "description": "Kailangan mo bang gumawa ng isang partikular na bagay? Narito ang ilang mabilis na link.",
+    "ticket": "Gumawa ng Ticket",
+    "contact": "Makipag-ugnayan sa Suporta",
+    "academy": "Circle Academy",
+    "report": "Mag-ulat ng Problema"
+  },
+  "videos": {
+    "title": "🎥 Mga Video Tutorial",
+    "description": "Panoorin ang mga maikling video na ito para matutunan kung paano gamitin ang Circle.",
+    "items": {
+      "join": "Paano Sumali sa Iyong Unang Circle",
+      "rules": "Pag-unawa sa Mga Panuntunan sa Trending",
+      "dm": "Mga Setting ng DM at Privacy",
+      "profile": "Pag-customize ng Iyong Profile"
+    }
+  },
+  "faq": {
+    "title": "📖 Mga Kategorya ng FAQ",
+    "description": "Galugarin ang aming mga pinakamadalas na itanong na nakaayos ayon sa kategorya.",
+    "noResults": "Walang nakitang tanong. Subukan ang ibang termino para sa paghahanap.",
+    "categories": {
+      "account": {
+        "category": "Account at Seguridad",
+        "items": {
+          "0": {
+            "question": "Paano ako gagawa ng Circle account?",
+            "answer": "Maaari kang gumawa ng Circle account sa pamamagitan ng pag-download ng aming app mula sa App Store o Google Play at pag-sign up gamit ang iyong email address o mga social media account. Sundin lang ang mga tagubilin sa screen para i-set up ang iyong profile."
+          },
+          "1": {
+            "question": "Paano i-reset ang iyong password",
+            "answer": "Sa screen ng pag-login, i-tap ang 'Nakalimutan ang Password'. Ilagay ang email address na nauugnay sa iyong account, at padadalhan ka namin ng link para i-reset ang iyong password. Kung mayroon ka pa ring problema, mangyaring makipag-ugnayan sa aming team ng suporta."
+          },
+          "2": {
+            "question": "Paano ko mababago ang impormasyon ng aking profile?",
+            "answer": "Maaari mong i-edit ang iyong profile sa pamamagitan ng pag-navigate sa tab na 'Profile' sa app. Mula doon, maaari mong i-update ang iyong pangalan, larawan sa profile, bio, at iba pang mga personal na detalye."
+          }
+        }
+      },
+      "circles": {
+        "category": "Pagsali at Pag-alis sa mga Circle",
+        "items": {
+          "0": {
+            "question": "Paano sumali sa isang Circle?",
+            "answer": "Maaari kang maghanap at sumali sa mga Circle sa tab na 'Galugarin' ng app. Mayroon din kaming mga pre-built na karaniwang Circle na maaari mong salihan kaagad. Bukod pa rito, irerekomenda ng aming AI ang mga nauugnay na Circle sa iyo batay sa iyong aktibidad at mga interes."
+          },
+          "1": {
+            "question": "Paano ako aalis sa isang Circle?",
+            "answer": "Para umalis sa isang Circle, pumunta sa pangunahing pahina ng Circle, i-tap ang icon ng mga setting (karaniwang tatlong tuldok), at piliin ang 'Umalis sa Circle'. Mananatili ang iyong mga post at komento, ngunit hindi ka na makakatanggap ng mga notification mula sa Circle na iyon."
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "May Mga Tanong Pa Ba?",
+    "description": "Kung hindi ka makahanap ng sagot, magsumite ng ticket at babalikan ka ng aming team ng suporta.",
+    "form": {
+      "topic": {
+        "label": "Paksa",
+        "placeholder": "Pumili ng paksa...",
+        "options": {
+          "login": "Problema sa Pag-login",
+          "bug": "Ulat ng Bug",
+          "ai": "Isyu sa AI Assistant",
+          "abuse": "Mag-ulat ng Pang-aabuso",
+          "feature": "Hiling ng Tampok",
+          "other": "Iba pa"
+        }
+      },
+      "email": {
+        "label": "Ang iyong Email",
+        "placeholder": "ikaw@halimbawa.com"
+      },
+      "message": {
+        "label": "Mensahe",
+        "placeholder": "Mangyaring ilarawan ang iyong isyu nang detalyado..."
+      },
+      "submit": "Magsumite ng Ticket",
+      "submitting": "Nagsusumite..."
+    },
+    "toast": {
+      "success": {
+        "title": "Naipasa ang Ticket!",
+        "description": "Natanggap na namin ang iyong kahilingan at babalikan ka namin sa lalong madaling panahon."
+      },
+      "error": {
+        "title": "Nabigo ang Pagsumite",
+        "description": "Nagkaroon ng hindi kilalang error. Pakisubukang muli."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Circle Inc. Lahat ng karapatan ay nakalaan.",
+    "about": "Tungkol sa Circle",
+    "terms": "Mga Tuntunin at Privacy",
+    "contact": "Makipag-ugnayan"
+  }
+}

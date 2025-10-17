@@ -1,0 +1,127 @@
+
+{
+  "hero": {
+    "title": "Selamat Datang di Dukungan Circle 💬",
+    "subtitle": "Temukan jawaban, tanyakan pada AI, atau dapatkan bantuan dari tim kami — cepat dan mudah.",
+    "cta": {
+      "askAI": "Tanya AI Sekarang",
+      "browseGuides": "Jelajahi Panduan Bantuan"
+    }
+  },
+  "search": {
+    "placeholder": "Cari pertanyaan Anda... 🔍"
+  },
+  "status": {
+    "operational": "✅ Semua sistem beroperasi"
+  },
+  "trending": {
+    "title": "📈 Pertanyaan Paling Populer",
+    "description": "Inilah yang ditanyakan pengguna lain saat ini.",
+    "questions": {
+      "join": "Cara bergabung dengan Circle",
+      "ai": "Cara kerja rekomendasi AI",
+      "password": "Cara mengatur ulang kata sandi Anda",
+      "dm": "Cara mengirim DM ke seseorang",
+      "trending": "Cara Circle Populer dibuat"
+    }
+  },
+  "quickActions": {
+    "title": "🧭 Panel Aksi Cepat",
+    "description": "Perlu melakukan sesuatu yang spesifik? Berikut beberapa tautan cepat.",
+    "ticket": "Buat Tiket",
+    "contact": "Hubungi Dukungan",
+    "academy": "Akademi Circle",
+    "report": "Laporkan Masalah"
+  },
+  "videos": {
+    "title": "🎥 Tutorial Video",
+    "description": "Tonton video singkat ini untuk mempelajari cara menggunakan Circle.",
+    "items": {
+      "join": "Cara Bergabung dengan Circle Pertama Anda",
+      "rules": "Memahami Aturan Populer",
+      "dm": "Pengaturan DM & Privasi",
+      "profile": "Menyesuaikan Profil Anda"
+    }
+  },
+  "faq": {
+    "title": "📖 Kategori FAQ",
+    "description": "Jelajahi pertanyaan yang paling sering diajukan yang diatur berdasarkan kategori.",
+    "noResults": "Tidak ada pertanyaan yang ditemukan. Coba istilah pencarian yang berbeda.",
+    "categories": {
+      "account": {
+        "category": "Akun & Keamanan",
+        "items": {
+          "0": {
+            "question": "Bagaimana cara membuat akun Circle?",
+            "answer": "Anda dapat membuat akun Circle dengan mengunduh aplikasi kami dari App Store atau Google Play dan mendaftar dengan alamat email atau akun media sosial Anda. Cukup ikuti petunjuk di layar untuk mengatur profil Anda."
+          },
+          "1": {
+            "question": "Cara mengatur ulang kata sandi Anda",
+            "answer": "Di layar masuk, ketuk 'Lupa Kata Sandi'. Masukkan alamat email yang terkait dengan akun Anda, dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda. Jika Anda masih mengalami masalah, silakan hubungi tim dukungan kami."
+          },
+          "2": {
+            "question": "Bagaimana cara mengubah informasi profil saya?",
+            "answer": "Anda dapat mengedit profil Anda dengan menavigasi ke tab 'Profil' di aplikasi. Dari sana, Anda dapat memperbarui nama, foto profil, bio, dan detail pribadi lainnya."
+          }
+        }
+      },
+      "circles": {
+        "category": "Bergabung & Meninggalkan Circle",
+        "items": {
+          "0": {
+            "question": "Bagaimana cara bergabung dengan Circle?",
+            "answer": "Anda dapat menemukan dan bergabung dengan Circle di tab 'Jelajahi' aplikasi. Kami juga memiliki Circle umum yang sudah dibuat sebelumnya yang dapat Anda ikuti segera. Selain itu, AI kami akan merekomendasikan Circle yang relevan untuk Anda berdasarkan aktivitas dan minat Anda."
+          },
+          "1": {
+            "question": "Bagaimana cara meninggalkan Circle?",
+            "answer": "Untuk meninggalkan Circle, buka halaman utama Circle, ketuk ikon pengaturan (biasanya tiga titik), dan pilih 'Tinggalkan Circle'. Postingan dan komentar Anda akan tetap ada, tetapi Anda tidak akan lagi menerima notifikasi dari Circle tersebut."
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Masih Punya Pertanyaan?",
+    "description": "Jika Anda tidak dapat menemukan jawaban, kirimkan tiket dan tim dukungan kami akan menghubungi Anda.",
+    "form": {
+      "topic": {
+        "label": "Topik",
+        "placeholder": "Pilih topik...",
+        "options": {
+          "login": "Masalah Masuk",
+          "bug": "Laporan Bug",
+          "ai": "Masalah Asisten AI",
+          "abuse": "Laporkan Penyalahgunaan",
+          "feature": "Permintaan Fitur",
+          "other": "Lainnya"
+        }
+      },
+      "email": {
+        "label": "Email Anda",
+        "placeholder": "anda@contoh.com"
+      },
+      "message": {
+        "label": "Pesan",
+        "placeholder": "Harap jelaskan masalah Anda secara detail..."
+      },
+      "submit": "Kirim Tiket",
+      "submitting": "Mengirim..."
+    },
+    "toast": {
+      "success": {
+        "title": "Tiket Terkirim!",
+        "description": "Kami telah menerima permintaan Anda dan akan segera menghubungi Anda."
+      },
+      "error": {
+        "title": "Pengiriman Gagal",
+        "description": "Terjadi kesalahan yang tidak diketahui. Silakan coba lagi."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Circle Inc. Semua hak dilindungi undang-undang.",
+    "about": "Tentang Circle",
+    "terms": "Syarat & Privasi",
+    "contact": "Kontak"
+  }
+}

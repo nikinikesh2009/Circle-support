@@ -1,0 +1,127 @@
+
+{
+  "hero": {
+    "title": "Bienvenido al Soporte de Circle 💬",
+    "subtitle": "Encuentra respuestas, pregunta a la IA u obtén ayuda de nuestro equipo, de forma rápida y sencilla.",
+    "cta": {
+      "askAI": "Preguntar a la IA ahora",
+      "browseGuides": "Explorar guías de ayuda"
+    }
+  },
+  "search": {
+    "placeholder": "Busca tu pregunta... 🔍"
+  },
+  "status": {
+    "operational": "✅ Todos los sistemas operativos"
+  },
+  "trending": {
+    "title": "📈 Preguntas más populares",
+    "description": "Esto es lo que otros usuarios están preguntando en este momento.",
+    "questions": {
+      "join": "Cómo unirse a un Círculo",
+      "ai": "Cómo funcionan las recomendaciones de IA",
+      "password": "Cómo restablecer tu contraseña",
+      "dm": "Cómo enviar un DM a alguien",
+      "trending": "Cómo se crean los Círculos de tendencia"
+    }
+  },
+  "quickActions": {
+    "title": "🧭 Panel de acciones rápidas",
+    "description": "¿Necesitas hacer algo específico? Aquí tienes algunos enlaces rápidos.",
+    "ticket": "Crear un ticket",
+    "contact": "Contactar con soporte",
+    "academy": "Academia Circle",
+    "report": "Informar de un problema"
+  },
+  "videos": {
+    "title": "🎥 Video tutoriales",
+    "description": "Mira estos breves videos para aprender a usar Circle.",
+    "items": {
+      "join": "Cómo unirte a tu primer Círculo",
+      "rules": "Entender las reglas de tendencia",
+      "dm": "Configuración de DM y privacidad",
+      "profile": "Personalizar tu perfil"
+    }
+  },
+  "faq": {
+    "title": "📖 Categorías de preguntas frecuentes",
+    "description": "Explora nuestras preguntas más frecuentes organizadas por categoría.",
+    "noResults": "No se encontraron preguntas. Intenta con otro término de búsqueda.",
+    "categories": {
+      "account": {
+        "category": "Cuenta y seguridad",
+        "items": {
+          "0": {
+            "question": "¿Cómo creo una cuenta de Circle?",
+            "answer": "Puedes crear una cuenta de Circle descargando nuestra aplicación desde la App Store o Google Play y registrándote con tu dirección de correo electrónico o tus cuentas de redes sociales. Simplemente sigue las instrucciones en pantalla para configurar tu perfil."
+          },
+          "1": {
+            "question": "Cómo restablecer tu contraseña",
+            "answer": "En la pantalla de inicio de sesión, toca '¿Olvidaste tu contraseña?'. Ingresa la dirección de correo electrónico asociada a tu cuenta y te enviaremos un enlace para restablecer tu contraseña. Si sigues teniendo problemas, ponte en contacto con nuestro equipo de soporte."
+          },
+          "2": {
+            "question": "¿Cómo puedo cambiar la información de mi perfil?",
+            "answer": "Puedes editar tu perfil navegando a la pestaña 'Perfil' en la aplicación. Desde allí, puedes actualizar tu nombre, foto de perfil, biografía y otros datos personales."
+          }
+        }
+      },
+      "circles": {
+        "category": "Unirse y abandonar Círculos",
+        "items": {
+          "0": {
+            "question": "¿Cómo unirse a un Círculo?",
+            "answer": "Puedes encontrar y unirte a Círculos en la pestaña 'Explorar' de la aplicación. También tenemos Círculos comunes predefinidos a los que te puedes unir de inmediato. Además, nuestra IA te recomendará Círculos relevantes según tu actividad e intereses."
+          },
+          "1": {
+            "question": "¿Cómo abandono un Círculo?",
+            "answer": "Para abandonar un Círculo, ve a la página principal del Círculo, toca el icono de configuración (generalmente tres puntos) y selecciona 'Abandonar Círculo'. Tus publicaciones y comentarios permanecerán, pero ya no recibirás notificaciones de ese Círculo."
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "¿Aún tienes preguntas?",
+    "description": "Si no pudiste encontrar una respuesta, envía un ticket y nuestro equipo de soporte se pondrá en contacto contigo.",
+    "form": {
+      "topic": {
+        "label": "Tema",
+        "placeholder": "Selecciona un tema...",
+        "options": {
+          "login": "Problema de inicio de sesión",
+          "bug": "Informe de error",
+          "ai": "Problema con el asistente de IA",
+          "abuse": "Informar de abuso",
+          "feature": "Solicitud de función",
+          "other": "Otro"
+        }
+      },
+      "email": {
+        "label": "Tu correo electrónico",
+        "placeholder": "tu@ejemplo.com"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Describe tu problema en detalle..."
+      },
+      "submit": "Enviar ticket",
+      "submitting": "Enviando..."
+    },
+    "toast": {
+      "success": {
+        "title": "¡Ticket enviado!",
+        "description": "Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto."
+      },
+      "error": {
+        "title": "Error al enviar",
+        "description": "Ocurrió un error desconocido. Por favor, inténtalo de nuevo."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Circle Inc. Todos los derechos reservados.",
+    "about": "Acerca de Circle",
+    "terms": "Términos y privacidad",
+    "contact": "Contacto"
+  }
+}

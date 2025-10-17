@@ -1,3 +1,4 @@
+
 export const defaultLocale = 'en';
 
 export const locale = {
@@ -18,13 +19,13 @@ export const locale = {
   trending: {
     title: "📈 Top Trending Questions",
     description: "Here's what other users are asking about right now.",
-    questions: [
-        { icon: '🚀', text: 'trending.questions.join' },
-        { icon: '🤖', text: 'trending.questions.ai' },
-        { icon: '🔐', text: 'trending.questions.password' },
-        { icon: '💬', text: 'trending.questions.dm' },
-        { icon: '⚡', text: 'trending.questions.trending' }
-    ]
+    questions: {
+        join: 'trending.questions.join',
+        ai: 'trending.questions.ai',
+        password: 'trending.questions.password',
+        dm: 'trending.questions.dm',
+        trending: 'trending.questions.trending'
+    }
   },
   'trending.questions.join': 'How to join a Circle',
   'trending.questions.ai': 'How AI Recommendations work',
@@ -42,12 +43,12 @@ export const locale = {
   videos: {
     title: "🎥 Video Tutorials",
     description: "Watch these short videos to learn how to use Circle.",
-    items: [
-        { title: 'videos.items.join', duration: '1:24', thumbnail: 'https://picsum.photos/seed/1/600/400' },
-        { title: 'videos.items.rules', duration: '2:05', thumbnail: 'https://picsum.photos/seed/2/600/400' },
-        { title: 'videos.items.dm', duration: '1:45', thumbnail: 'https://picsum.photos/seed/3/600/400' },
-        { title: 'videos.items.profile', duration: '0:58', thumbnail: 'https://picsum.photos/seed/4/600/400' }
-    ]
+    items: {
+        join: 'videos.items.join',
+        rules: 'videos.items.rules',
+        dm: 'videos.items.dm',
+        profile: 'videos.items.profile'
+    }
   },
   'videos.items.join': 'How to Join Your First Circle',
   'videos.items.rules': 'Understanding Trending Rules',
@@ -57,18 +58,23 @@ export const locale = {
     title: "📖 FAQ Categories",
     description: "Explore our most frequently asked questions organized by category.",
     noResults: "No questions found. Try a different search term.",
-    categories: [
-      {
+    categories: {
+      account: {
         category: 'faq.categories.account.category',
-        icon: '🛡️',
-        items: [
-          { question: 'faq.categories.account.items.0.question', answer: 'faq.categories.account.items.0.answer' },
-          { question: 'faq.categories.account.items.1.question', answer: 'faq.categories.account.items.1.answer' },
-          { question: 'faq.categories.account.items.2.question', answer: 'faq.categories.account.items.2.answer' }
-        ]
+        items: {
+          '0': { question: 'faq.categories.account.items.0.question', answer: 'faq.categories.account.items.0.answer' },
+          '1': { question: 'faq.categories.account.items.1.question', answer: 'faq.categories.account.items.1.answer' },
+          '2': { question: 'faq.categories.account.items.2.question', answer: 'faq.categories.account.items.2.answer' }
+        }
       },
-      // ... other categories structured similarly
-    ]
+      circles: {
+        category: 'faq.categories.circles.category',
+        items: {
+          '0': { question: 'faq.categories.circles.items.0.question', answer: 'faq.categories.circles.items.0.answer' },
+          '1': { question: 'faq.categories.circles.items.1.question', answer: 'faq.categories.circles.items.1.answer' }
+        }
+      }
+    }
   },
   'faq.categories.account.category': 'Account & Security',
   'faq.categories.account.items.0.question': 'How do I create a Circle account?',

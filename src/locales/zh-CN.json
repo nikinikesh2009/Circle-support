@@ -1,0 +1,127 @@
+
+{
+  "hero": {
+    "title": "欢迎来到 Circle 支持 💬",
+    "subtitle": "寻找答案，询问 AI，或从我们的团队获得帮助 — 快速而简单。",
+    "cta": {
+      "askAI": "立即询问 AI",
+      "browseGuides": "浏览帮助指南"
+    }
+  },
+  "search": {
+    "placeholder": "搜索您的问题... 🔍"
+  },
+  "status": {
+    "operational": "✅ 所有系统均可运行"
+  },
+  "trending": {
+    "title": "📈 热门问题",
+    "description": "这是其他用户目前正在询问的问题。",
+    "questions": {
+      "join": "如何加入圈子",
+      "ai": "AI 推荐如何运作",
+      "password": "如何重置密码",
+      "dm": "如何给某人发私信",
+      "trending": "热门圈子是如何创建的"
+    }
+  },
+  "quickActions": {
+    "title": "🧭 快速操作面板",
+    "description": "需要做一些特定的事情吗？这里有一些快速链接。",
+    "ticket": "创建工单",
+    "contact": "联系支持",
+    "academy": "圈子学院",
+    "report": "报告问题"
+  },
+  "videos": {
+    "title": "🎥 视频教程",
+    "description": "观看这些短视频，学习如何使用 Circle。",
+    "items": {
+      "join": "如何加入您的第一个圈子",
+      "rules": "了解热门规则",
+      "dm": "私信和隐私设置",
+      "profile": "自定义您的个人资料"
+    }
+  },
+  "faq": {
+    "title": "📖 常见问题类别",
+    "description": "按类别浏览我们最常见的问题。",
+    "noResults": "未找到问题。请尝试其他搜索词。",
+    "categories": {
+      "account": {
+        "category": "帐户和安全",
+        "items": {
+          "0": {
+            "question": "如何创建 Circle 帐户？",
+            "answer": "您可以通过从 App Store 或 Google Play 下载我们的应用程序，并使用您的电子邮件地址或社交媒体帐户注册来创建 Circle 帐户。只需按照屏幕上的说明设置您的个人资料即可。"
+          },
+          "1": {
+            "question": "如何重置密码",
+            "answer": "在登录屏幕上，点击“忘记密码”。输入与您的帐户关联的电子邮件地址，我们将向您发送重置密码的链接。如果您仍然遇到问题，请联系我们的支持团队。"
+          },
+          "2": {
+            "question": "如何更改我的个人资料信息？",
+            "answer": "您可以通过导航到应用程序中的“个人资料”选项卡来编辑您的个人资料。在那里，您可以更新您的姓名、个人资料图片、简介和其他个人详细信息。"
+          }
+        }
+      },
+      "circles": {
+        "category": "加入和离开圈子",
+        "items": {
+          "0": {
+            "question": "如何加入圈子？",
+            "answer": "您可以在应用程序的“浏览”选项卡中找到并加入圈子。我们还有您可以立即加入的预建公共圈子。此外，我们的 AI 会根据您的活动和兴趣向您推荐相关的圈子。"
+          },
+          "1": {
+            "question": "如何离开圈子？",
+            "answer": "要离开圈子，请转到圈子的主页，点击设置图标（通常是三个点），然后选择“离开圈子”。您的帖子和评论将保留，但您将不再收到该圈子的通知。"
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "还有问题吗？",
+    "description": "如果您找不到答案，请提交工单，我们的支持团队会回复您。",
+    "form": {
+      "topic": {
+        "label": "主题",
+        "placeholder": "选择一个主题...",
+        "options": {
+          "login": "登录问题",
+          "bug": "错误报告",
+          "ai": "AI 助手问题",
+          "abuse": "报告滥用",
+          "feature": "功能请求",
+          "other": "其他"
+        }
+      },
+      "email": {
+        "label": "您的电子邮件",
+        "placeholder": "you@example.com"
+      },
+      "message": {
+        "label": "信息",
+        "placeholder": "请详细描述您的问题..."
+      },
+      "submit": "提交工单",
+      "submitting": "正在提交..."
+    },
+    "toast": {
+      "success": {
+        "title": "工单已提交！",
+        "description": "我们已收到您的请求，并将尽快回复您。"
+      },
+      "error": {
+        "title": "提交失败",
+        "description": "发生未知错误。请重试。"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Circle Inc. 版权所有。",
+    "about": "关于 Circle",
+    "terms": "条款和隐私",
+    "contact": "联系"
+  }
+}
