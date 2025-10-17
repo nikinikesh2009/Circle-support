@@ -3,6 +3,8 @@
 import { z } from 'zod';
 import { faqData } from '@/lib/data';
 import { chatWithCircleSupportAI } from '@/ai/flows/circle-support-ai';
+import { translateText } from '@/ai/flows/translate-text';
+import { type LocaleStrings } from '@/lib/locale';
 
 const ticketSchema = z.object({
   topic: z.string(),
@@ -45,5 +47,18 @@ export async function askAI(userInput: string, chatHistory: {role: 'user' | 'ass
   } catch (e) {
     console.error('AI chat failed:', e);
     return "I'm having a little trouble connecting to my brain right now. Please try again in a moment.";
+  }
+}
+
+export async function getAITranslation(strings: LocaleStrings, language: string) {
+  try {
+    const translatedStrings = await translateText({
+      content: strings,
+      targetLanguage: language,
+    });
+    return translatedStrings;
+  } catch (e) {
+    console.error("Translation failed", e);
+    return null;
   }
 }

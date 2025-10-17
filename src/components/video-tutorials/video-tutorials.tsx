@@ -3,15 +3,17 @@ import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { PlayCircle } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useTranslation } from '@/context/translation-context';
 
 export default function VideoTutorials() {
+    const { t } = useTranslation();
     return (
         <section id="videos" className="w-full py-12 md:py-20">
             <div className="container mx-auto max-w-6xl px-4 animate-fade-in-up animation-delay-800">
                 <div className="mb-12 space-y-2 text-center">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">🎥 Video Tutorials</h2>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t('videos.title')}</h2>
                     <p className="text-muted-foreground">
-                        Watch these short videos to learn how to use Circle.
+                        {t('videos.description')}
                     </p>
                 </div>
                 <Carousel
@@ -29,7 +31,7 @@ export default function VideoTutorials() {
                                     <CardContent className="p-0 relative">
                                         <Image
                                             src={video.thumbnail}
-                                            alt={video.title}
+                                            alt={t(video.title)}
                                             width={600}
                                             height={400}
                                             className="w-full h-auto aspect-video object-cover"
@@ -42,7 +44,7 @@ export default function VideoTutorials() {
                                         </div>
                                     </CardContent>
                                     <div className="p-4 bg-card">
-                                      <h3 className="font-semibold text-lg">{video.title}</h3>
+                                      <h3 className="font-semibold text-lg">{t(video.title)}</h3>
                                     </div>
                                 </Card>
                             </div>

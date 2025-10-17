@@ -47,10 +47,6 @@
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    top: 0px !important;
-  }
-  .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon {
-    display: none !important;
   }
 }
 

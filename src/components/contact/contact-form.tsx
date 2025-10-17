@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useState } from 'react';
+import { useTranslation } from '@/context/translation-context';
 
 const formSchema = z.object({
   topic: z.string().min(1, 'Please select a topic.'),
@@ -23,6 +24,7 @@ const formSchema = z.object({
 export function ContactForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useTranslation();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,14 +42,14 @@ export function ContactForm() {
 
     if (result.success) {
       toast({
-        title: "Ticket Submitted!",
-        description: "We've received your request and will get back to you soon.",
+        title: t('contact.toast.success.title'),
+        description: t('contact.toast.success.description'),
       });
       form.reset();
     } else {
       toast({
-        title: "Submission Failed",
-        description: result.error || "An unknown error occurred. Please try again.",
+        title: t('contact.toast.error.title'),
+        description: result.error || t('contact.toast.error.description'),
         variant: "destructive",
       });
     }
@@ -63,20 +65,20 @@ export function ContactForm() {
               name="topic"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Topic</FormLabel>
+                  <FormLabel>{t('contact.form.topic.label')}</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value} value={field.value}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select a topic..." />
+                        <SelectValue placeholder={t('contact.form.topic.placeholder')} />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="login-issue">Login Issue</SelectItem>
-                      <SelectItem value="bug-report">Bug Report</SelectItem>
-                      <SelectItem value="ai-issue">AI Assistant Issue</SelectItem>
-                      <SelectItem value="report-abuse">Report Abuse</SelectItem>
-                      <SelectItem value="feature-request">Feature Request</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="login-issue">{t('contact.form.topic.options.login')}</SelectItem>
+                      <SelectItem value="bug-report">{t('contact.form.topic.options.bug')}</SelectItem>
+                      <SelectItem value="ai-issue">{t('contact.form.topic.options.ai')}</SelectItem>
+                      <SelectItem value="report-abuse">{t('contact.form.topic.options.abuse')}</SelectItem>
+                      <SelectItem value="feature-request">{t('contact.form.topic.options.feature')}</SelectItem>
+                      <SelectItem value="other">{t('contact.form.topic.options.other')}</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -88,9 +90,9 @@ export function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Email</FormLabel>
+                  <FormLabel>{t('contact.form.email.label')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="you@example.com" {...field} />
+                    <Input placeholder={t('contact.form.email.placeholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -101,10 +103,10 @@ export function ContactForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel>{t('contact.form.message.label')}</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Please describe your issue in detail..."
+                      placeholder={t('contact.form.message.placeholder')}
                       className="min-h-[150px]"
                       {...field}
                     />
@@ -114,7 +116,7 @@ export function ContactForm() {
               )}
             />
             <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? "Submitting..." : "Submit Ticket"}
+              {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
             </Button>
           </form>
         </Form>

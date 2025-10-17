@@ -33,3 +33,15 @@ export const SuggestRelevantCirclesOutputSchema = z.object({
   reasoning: z.string().describe('The AI\'s reasoning for suggesting these specific Circles.'),
 });
 export type SuggestRelevantCirclesOutput = z.infer<typeof SuggestRelevantCirclesOutputSchema>;
+
+
+// Schemas for: src/ai/flows/translate-text.ts
+
+export const TranslateTextInputSchema = z.object({
+  content: z.any().describe("A JSON object containing the strings to be translated."),
+  targetLanguage: z.string().describe("The target language for translation (e.g., 'Spanish', 'French', 'Japanese')."),
+});
+export type TranslateTextInput = z.infer<typeof TranslateTextInputSchema>;
+
+export const TranslatedContentSchema = z.any().describe("The JSON object with all string values translated into the target language. The JSON structure must be identical to the input.");
+export type TranslatedContent = z.infer<typeof TranslatedContentSchema>;

@@ -1,8 +1,12 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { BookOpen, MessageSquare } from 'lucide-react';
+import { useTranslation } from '@/context/translation-context';
+
 
 export default function Hero() {
+  const { t } = useTranslation();
+  
   const handleAskAI = () => {
     const trigger = document.querySelector('button[aria-label="Open support chat"]') as HTMLElement;
     if (trigger) {
@@ -43,10 +47,10 @@ export default function Hero() {
 
       <div className="relative z-10 space-y-8 px-4 animate-fade-in-up">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl xl:text-7xl/none">
-          Welcome to Circle Support 💬
+          {t('hero.title')}
         </h1>
         <p className="mx-auto max-w-[700px] text-white/80 md:text-xl">
-          Find answers, ask AI, or get help from our team — fast and easy.
+          {t('hero.subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
@@ -54,7 +58,7 @@ export default function Hero() {
             className="h-14 rounded-full bg-white text-primary px-10 text-lg font-bold shadow-lg transition-transform hover:scale-105 hover:bg-white/90"
             onClick={handleAskAI}
           >
-            <MessageSquare className="mr-3 h-6 w-6" /> Ask AI Now
+            <MessageSquare className="mr-3 h-6 w-6" /> {t('hero.cta.askAI')}
           </Button>
           <Button
             size="lg"
@@ -62,7 +66,7 @@ export default function Hero() {
             className="h-14 rounded-full border-2 border-white bg-transparent text-white px-10 text-lg font-bold shadow-lg transition-transform hover:scale-105 hover:bg-white/10"
             onClick={scrollToFaq}
           >
-            <BookOpen className="mr-3 h-6 w-6" /> Browse Help Guides
+            <BookOpen className="mr-3 h-6 w-6" /> {t('hero.cta.browseGuides')}
           </Button>
         </div>
       </div>
