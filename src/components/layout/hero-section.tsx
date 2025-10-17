@@ -23,7 +23,7 @@ export default function Hero({ dictionary }: { dictionary: LocaleStrings }) {
     <section
       className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden"
       style={{
-        background: 'linear-gradient(90deg, #38E1B0 0%, #2AB2FF 100%)',
+        background: 'linear-gradient(90deg, #5B21B6 0%, #8B5CF6 100%)',
       }}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-black/10 z-0"></div>
