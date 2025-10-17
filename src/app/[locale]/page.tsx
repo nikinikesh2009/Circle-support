@@ -20,13 +20,13 @@ export default async function Home({ params: { locale } }: { params: { locale: L
     <div className="flex min-h-dvh flex-col bg-background">
       <Header locale={locale} dictionary={dictionary} />
       <main className="flex-1">
-        <Hero dictionary={dictionary} />
-        <SearchSection dictionary={dictionary} />
-        <SystemStatus dictionary={dictionary} />
-        <TrendingQuestions dictionary={dictionary} />
-        <QuickActions dictionary={dictionary} />
-        <VideoTutorials dictionary={dictionary} />
-        <Faq dictionary={dictionary} />
+        <Hero />
+        <SearchSection />
+        <SystemStatus />
+        <TrendingQuestions />
+        <QuickActions />
+        <VideoTutorials />
+        <Faq />
 
         <section id="contact" className="w-full py-20 md:py-32 bg-background animate-fade-in-up animation-delay-800">
            <div className="container mx-auto max-w-2xl px-4">
@@ -36,11 +36,11 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                  {dictionary.contact.description}
                </p>
              </div>
-             <ContactForm dictionary={dictionary} />
+             <ContactForm />
            </div>
          </section>
       </main>
-      <Footer dictionary={dictionary} />
+      <Footer />
       <Chatbot />
     </div>
   );
