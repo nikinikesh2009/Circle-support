@@ -128,6 +128,16 @@ export default {
             opacity: '0',
           },
         },
+        'fall': {
+          '0%': {
+            transform: 'translateY(-10vh) translateX(5vw)',
+            opacity: '0.8',
+          },
+          '100%': {
+            transform: 'translateY(60vh) translateX(-5vw)',
+            opacity: '0.2',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -136,6 +146,7 @@ export default {
         'fade-in-up': 'fade-in-up 0.8s ease-in-out',
         'pulsar': 'pulsar 2s infinite',
         'shooting-star': 'shooting-star 8s ease-in-out infinite',
+        'fall': 'fall 10s linear infinite',
       },
     },
   },
