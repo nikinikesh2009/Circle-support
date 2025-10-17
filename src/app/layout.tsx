@@ -46,6 +46,21 @@ export default function RootLayout({
                   'google_translate_element'
                 );
               }
+              
+              function doGTranslate(lang_pair) {
+                if (lang_pair.value) lang_pair = lang_pair.value;
+                if (lang_pair === '') return;
+                var lang = lang_pair.split('|')[1];
+                var teCombo = document.querySelector('.goog-te-combo');
+              
+                if (document.getElementById('google_translate_element') == null || !teCombo) {
+                  setTimeout(function() { doGTranslate(lang_pair); }, 100);
+                } else {
+                  teCombo.value = lang;
+                  const event = new Event('change');
+                  teCombo.dispatchEvent(event);
+                }
+              }
             `,
           }}
         />

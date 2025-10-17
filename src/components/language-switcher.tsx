@@ -3,32 +3,13 @@
 declare global {
   interface Window {
     google: any;
-    googleTranslateElementInit: () => void;
+    doGTranslate: (lang: string | HTMLSelectElement) => void;
   }
 }
 
 export function LanguageSwitcher() {
-
-  const doGTranslate = (lang: string) => {
-    if (!lang) return;
-
-    const teCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-    
-    if (document.getElementById('google_translate_element') == null || !teCombo) {
-      setTimeout(() => { doGTranslate(lang); }, 100);
-    } else {
-      teCombo.value = lang;
-      const event = new Event('change');
-      teCombo.dispatchEvent(event);
-    }
-  };
-
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const langPair = e.target.value;
-    if (langPair) {
-        const lang = langPair.split('|')[1];
-        doGTranslate(lang);
-    }
+    window.doGTranslate(e.target.value);
   }
 
   return (
