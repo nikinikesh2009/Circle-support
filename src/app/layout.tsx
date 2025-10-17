@@ -1,19 +1,13 @@
 import type { Metadata } from 'next';
 import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
-import { Space_Grotesk, Cormorant_Garamond } from 'next/font/google';
+import { PT_Sans } from 'next/font/google';
 
-const spaceGrotesk = Space_Grotesk({ 
-  subsets: ['latin'],
-  variable: '--font-space-grotesk'
-});
-
-const cormorantGaramond = Cormorant_Garamond({
+const ptSans = PT_Sans({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-cormorant-garamond'
+  variable: '--font-pt-sans',
 });
-
 
 export const metadata: Metadata = {
   title: 'Circle Support Hub',
@@ -29,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${cormorantGaramond.variable}`} suppressHydrationWarning>
+    <html lang="en" className={ptSans.variable} suppressHydrationWarning>
       <head />
       <body className="font-body antialiased">
         {children}

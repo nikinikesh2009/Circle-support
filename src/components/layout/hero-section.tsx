@@ -1,50 +1,36 @@
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-
-function SnowingEffect() {
-  const snowflakeCount = 50;
-  return (
-    <div className="snow" aria-hidden="true">
-      {Array.from({ length: snowflakeCount }).map((_, i) => {
-        const style = {
-          left: `${Math.random() * 100}vw`,
-          width: `${Math.random() * 3 + 1}px`,
-          height: `${Math.random() * 3 + 1}px`,
-          animationDuration: `${Math.random() * 5 + 5}s`,
-          animationDelay: `${Math.random() * 5}s`,
-        };
-        return <div key={i} className="snowflake" style={style} />;
-      })}
-    </div>
-  );
-}
+'use client';
+import { Button } from '@/components/ui/button';
 
 export default function Hero() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
+  const handleAskAI = () => {
+    const trigger = document.querySelector('button[aria-label="Open support chat"]') as HTMLElement;
+    if (trigger) {
+      trigger.click();
+    }
+  };
 
   return (
-    <section className="relative w-full h-[50vh] flex items-center justify-center text-center overflow-hidden animate-fade-in-up">
-       {heroImage && (
-         <Image 
-          src={heroImage.imageUrl} 
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          data-ai-hint={heroImage.imageHint}
-          priority
-        />
-       )}
-      <SnowingEffect />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
-      <div className="relative z-10 space-y-4 px-4">
-          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-6xl xl:text-7xl/none">
-            Welcome to the Circle Support Hub
-          </h1>
-          <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl">
-            Find answers, learn about our features, and get the help you need to make the most of your community experience.
-          </p>
+    <section
+      className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white"
+      style={{
+        background: 'linear-gradient(90deg, #38E1B0 0%, #2AB2FF 100%)',
+      }}
+    >
+      <div className="relative z-10 space-y-8 px-4">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl xl:text-7xl/none">
+          Welcome to Circle Support
+        </h1>
+        <p className="mx-auto max-w-[700px] text-white/80 md:text-xl">
+          Get instant answers from our AI assistant or browse our FAQs. We're here to help!
+        </p>
+        <Button
+          size="lg"
+          className="h-14 rounded-full bg-white text-primary px-10 text-lg font-bold shadow-lg transition-transform hover:scale-105 hover:bg-white/90"
+          onClick={handleAskAI}
+        >
+          <span className="mr-2 text-2xl">💬</span> Ask AI Now
+        </Button>
       </div>
-      <div className="absolute top-0 left-0 w-1 h-1 bg-white rounded-full animate-shooting-star"></div>
     </section>
   );
 }

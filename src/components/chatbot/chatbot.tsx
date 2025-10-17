@@ -10,12 +10,12 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-8 right-8 z-50">
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button
             size="icon"
-            className="h-16 w-16 rounded-full shadow-lg"
+            className="h-16 w-16 rounded-full shadow-lg glow"
             aria-label="Open support chat"
           >
             <MessageSquare className="h-8 w-8" />
@@ -24,7 +24,7 @@ export default function Chatbot() {
         <PopoverContent
           side="top"
           align="end"
-          className="w-[calc(100vw-32px)] sm:w-96 h-[60vh] p-0 rounded-xl shadow-2xl mr-2 mb-2"
+          className="w-[calc(100vw-32px)] sm:w-96 h-[70vh] max-h-[500px] p-0 rounded-2xl shadow-2xl mr-2 mb-2"
           onOpenAutoFocus={(e) => e.preventDefault()}
         >
           <ChatWindow closeChat={() => setIsOpen(false)} />

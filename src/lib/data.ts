@@ -1,5 +1,3 @@
-import type { LucideIcon } from 'lucide-react';
-
 export type FaqItem = {
   question: string;
   answer: string;
@@ -7,14 +5,14 @@ export type FaqItem = {
 
 export type FaqCategory = {
   category: string;
-  iconName: "User" | "Circle" | "TrendingUp" | "MessageSquare" | "Cpu" | "Bell" | "Shield";
+  icon: string; // Emoji icon
   items: FaqItem[];
 };
 
 export const faqData: FaqCategory[] = [
   {
     category: 'Account & Login',
-    iconName: "User",
+    icon: '👤',
     items: [
       {
         question: 'How do I create a Circle account?',
@@ -32,7 +30,7 @@ export const faqData: FaqCategory[] = [
   },
   {
     category: 'Joining & Leaving Circles',
-    iconName: "Circle",
+    icon: '🔹',
     items: [
       {
         question: 'What are Circles?',
@@ -50,7 +48,7 @@ export const faqData: FaqCategory[] = [
   },
   {
     category: 'Trending Circle Rules',
-    iconName: "TrendingUp",
+    icon: '🚀',
     items: [
       {
         question: 'How are new Circles created?',
@@ -64,7 +62,7 @@ export const faqData: FaqCategory[] = [
   },
   {
     category: 'Direct Messaging & Private Circles',
-    iconName: "MessageSquare",
+    icon: '✉️',
     items: [
       {
         question: 'Can I send direct messages to other users?',
@@ -78,7 +76,7 @@ export const faqData: FaqCategory[] = [
   },
   {
     category: 'AI Features',
-    iconName: "Cpu",
+    icon: '🤖',
     items: [
       {
         question: 'How does the AI recommend Circles?',
@@ -91,18 +89,8 @@ export const faqData: FaqCategory[] = [
     ]
   },
   {
-    category: 'Notifications',
-    iconName: "Bell",
-    items: [
-      {
-        question: 'How can I manage my notifications?',
-        answer: 'You can customize your notification settings in the "Settings" menu. You have granular control over which types of notifications you receive from each Circle, including new posts, comments, and direct messages.'
-      }
-    ]
-  },
-  {
     category: 'Safety & Privacy',
-    iconName: "Shield",
+    icon: '🛡️',
     items: [
       {
         question: 'How do I report a user or content?',

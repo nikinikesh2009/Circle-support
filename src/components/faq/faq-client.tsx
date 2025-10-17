@@ -1,25 +1,12 @@
 'use client';
 
-import { useState, useMemo, createElement } from 'react';
-import { Input } from '@/components/ui/input';
+import { useState, useMemo } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import type { FaqCategory } from '@/lib/data';
-import { Search, User, Circle, TrendingUp, MessageSquare, Cpu, Bell, Shield } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 
 interface FaqClientProps {
   faqData: FaqCategory[];
 }
-
-const icons: Record<FaqCategory['iconName'], LucideIcon> = {
-  User,
-  Circle,
-  TrendingUp,
-  MessageSquare,
-  Cpu,
-  Bell,
-  Shield,
-};
 
 export default function FaqClient({ faqData }: FaqClientProps) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -46,43 +33,27 @@ export default function FaqClient({ faqData }: FaqClientProps) {
   }, [searchTerm, faqData]);
 
   return (
-    <div className="space-y-8">
-      <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-        <Input
-          type="search"
-          placeholder="Search questions..."
-          className="w-full rounded-full bg-card pl-10 pr-4 py-6 text-base transition-shadow focus:shadow-lg"
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-        />
-      </div>
-
-      <div className="space-y-6">
-        {filteredData.length > 0 ? (
-          filteredData.map(category => {
-            const Icon = icons[category.iconName];
-            return (
-              <div key={category.category}>
-                <h3 className="mb-4 flex items-center gap-3 text-2xl font-semibold">
-                  {Icon && <Icon className="h-6 w-6 text-primary" />}
-                  {category.category}
-                </h3>
-                <Accordion type="single" collapsible className="w-full space-y-2">
-                  {category.items.map(item => (
-                    <AccordionItem value={item.question} key={item.question} className="rounded-lg border bg-card px-4 shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
-                      <AccordionTrigger className="text-left font-medium hover:no-underline">{item.question}</AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">{item.answer}</AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-            )
-          })
-        ) : (
-          <p className="text-center text-muted-foreground">No questions found. Try a different search term.</p>
-        )}
-      </div>
+    <div className="space-y-12">
+      {filteredData.length > 0 ? (
+        filteredData.map(category => (
+          <div key={category.category}>
+            <h3 className="mb-6 flex items-center gap-3 text-2xl font-bold text-foreground">
+              <span className="text-3xl">{category.icon}</span>
+              {category.category}
+            </h3>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {category.items.map(item => (
+                <AccordionItem value={item.question} key={item.question} className="rounded-2xl border bg-card p-1 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
+                  <AccordionTrigger className="px-6 py-4 text-left font-semibold text-lg hover:no-underline">{item.question}</AccordionTrigger>
+                  <AccordionContent className="px-6 text-muted-foreground text-base">{item.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        ))
+      ) : (
+        <p className="py-10 text-center text-muted-foreground">No questions found. Try a different search term.</p>
+      )}
     </div>
   );
 }
